@@ -1,0 +1,14 @@
+/Users/sundehakon/Documents/random-number-game/bin/Debug/net7.0/random-number-game
+/Users/sundehakon/Documents/random-number-game/bin/Debug/net7.0/random-number-game.deps.json
+/Users/sundehakon/Documents/random-number-game/bin/Debug/net7.0/random-number-game.runtimeconfig.json
+/Users/sundehakon/Documents/random-number-game/bin/Debug/net7.0/random-number-game.dll
+/Users/sundehakon/Documents/random-number-game/bin/Debug/net7.0/random-number-game.pdb
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.AssemblyInfoInputs.cache
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.AssemblyInfo.cs
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.csproj.CoreCompileInputs.cache
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.dll
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/refint/random-number-game.dll
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.pdb
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/random-number-game.genruntimeconfig.cache
+/Users/sundehakon/Documents/random-number-game/obj/Debug/net7.0/ref/random-number-game.dll
