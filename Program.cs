@@ -1,5 +1,7 @@
 ﻿Random rnd = new Random();
 int randomNumber = rnd.Next(1,101);
+int randomNumberMedium = rnd.Next(1, 250);
+int ranomNumberHard = rnd.Next(1, 1000);
 
 string asciiArt = @"
                       _                                         _                                            
@@ -34,6 +36,12 @@ string winner = @"
    __/ |                                  
   |___/                                   
 ";
+
+ConsoleKeyInfo keyInfo;
+do 
+{
+    keyInfo = Console.ReadKey();
+} while (keyInfo.Key != ConsoleKey.E);
 
 int userInput = 0;
 
