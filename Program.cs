@@ -1,6 +1,5 @@
 ﻿Random rnd = new Random();
 int randomNumber = rnd.Next(1,101);
-Console.WriteLine(randomNumber);
 
 string asciiArt = @"
                       _                                         _                                            
