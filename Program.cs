@@ -1,7 +1,4 @@
 ﻿Random rnd = new Random();
-int randomNumber = rnd.Next(1,101);
-int randomNumberMedium = rnd.Next(1, 250);
-int ranomNumberHard = rnd.Next(1, 1000);
 
 string asciiArt = @"
                       _                                         _                                            
@@ -37,31 +34,31 @@ string winner = @"
   |___/                                   
 ";
 
-ConsoleKeyInfo keyInfo;
-do 
-{
-    keyInfo = Console.ReadKey();
-} while (keyInfo.Key != ConsoleKey.E);
+Console.Write("Choose a difficulty (Easy, Medium or Hard): ");
+string userDifficulty = Console.ReadLine();
 
-int userInput = 0;
-
-while (true)
+if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
 {
-    Console.Write("Choose a number between 1-100: ");
-    userInput = int.Parse(Console.ReadLine());
+    int randomNumber = rnd.Next(1, 101);
+
+    int userInput;
+
+    while (true)
+    {
+        Console.Write("Choose a number between 1-100: ");
+        userInput = int.Parse(Console.ReadLine());
 
     if (userInput >= 1 && userInput <= 100)
     {
         break;
     }
 
-    Console.WriteLine("Invalid input, please choose a number between 1 and 100.");
-}
+        Console.WriteLine("Invalid input, please choose a number between 1 and 100.");
+    }
 
-int difference = randomNumber - userInput;
-int positiveDifference = userInput - randomNumber;
-try
-{
+    int difference = randomNumber - userInput;
+    int positiveDifference = userInput - randomNumber;
+
     if (userInput == randomNumber) 
     {
         Console.WriteLine(winner);
@@ -69,18 +66,98 @@ try
     else if (userInput > randomNumber)
     {   
         Console.WriteLine(gameOver);
-        Console.WriteLine($"You we're off by: {positiveDifference}");
-    }
+        Console.WriteLine($"You were off by: {positiveDifference}");
+    }   
     else if (userInput < randomNumber)
     {
         Console.WriteLine(gameOver);
-        Console.WriteLine($"You we're off by: {difference}");
+        Console.WriteLine($"You were off by: {difference}");
     }
     else 
     {
         Console.WriteLine("You're incorrect, try again!");
     }
-} catch (Exception e)
+} else if (string.Equals(userDifficulty, "medium", StringComparison.OrdinalIgnoreCase))
 {
-    Console.WriteLine(e.Message);
+    int randomNumber = rnd.Next(1, 501);
+
+    int userInput;
+
+    while (true)
+    {
+        Console.Write("Choose a number between 1-500: ");
+        userInput = int.Parse(Console.ReadLine());
+
+    if (userInput >= 1 && userInput <= 500)
+    {
+        break;
+    }
+
+        Console.WriteLine("Invalid input, please choose a number between 1 and 500.");
+    }
+
+    int difference = randomNumber - userInput;
+    int positiveDifference = userInput - randomNumber;
+
+    if (userInput == randomNumber) 
+    {
+        Console.WriteLine(winner);
+    }
+    else if (userInput > randomNumber)
+    {   
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {positiveDifference}");
+    }   
+    else if (userInput < randomNumber)
+    {
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {difference}");
+    }
+    else 
+    {
+        Console.WriteLine("You're incorrect, try again!");
+    }
+} else if (string.Equals(userDifficulty, "hard", StringComparison.OrdinalIgnoreCase))
+{
+    int randomNumber = rnd.Next(1, 1001);
+
+    int userInput;
+
+    while (true)
+    {
+        Console.Write("Choose a number between 1-1000: ");
+        userInput = int.Parse(Console.ReadLine());
+
+    if (userInput >= 1 && userInput <= 1000)
+    {
+        break;
+    }
+
+        Console.WriteLine("Invalid input, please choose a number between 1 and 1000.");
+    }
+
+    int difference = randomNumber - userInput;
+    int positiveDifference = userInput - randomNumber;
+
+    if (userInput == randomNumber) 
+    {
+        Console.WriteLine(winner);
+    }
+    else if (userInput > randomNumber)
+    {   
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {positiveDifference}");
+    }   
+    else if (userInput < randomNumber)
+    {
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {difference}");
+    }
+    else 
+    {
+        Console.WriteLine("You're incorrect, try again!");
+    }
+} else 
+{
+    Console.WriteLine("Please choose either easy, medium or hard...");
 }
