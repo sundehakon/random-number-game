@@ -36,7 +36,7 @@ string winner = @"
 ";
 
 Console.Write("Choose a difficulty (Easy, Medium or Hard): ");
-string userDifficulty = Console.ReadLine();
+string? userDifficulty = Console.ReadLine();
 
 if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
 {
