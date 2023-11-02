@@ -1,4 +1,5 @@
 ﻿Random rnd = new Random();
+int userInput;
 
 string asciiArt = @"
                       _                                         _                                            
@@ -41,15 +42,15 @@ if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
 {
     int randomNumber = rnd.Next(1, 101);
 
-    int userInput;
-
     while (true)
     {
         Console.Write("Choose a number between 1-100: ");
-        userInput = int.Parse(Console.ReadLine());
+        string? userInputString = Console.ReadLine();
+        bool success = int.TryParse(userInputString, out int parsedInput);
 
-    if (userInput >= 1 && userInput <= 100)
+    if (parsedInput >= 1 && parsedInput <= 100)
     {
+        userInput = parsedInput;
         break;
     }
 
@@ -81,15 +82,15 @@ if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
 {
     int randomNumber = rnd.Next(1, 501);
 
-    int userInput;
-
     while (true)
     {
         Console.Write("Choose a number between 1-500: ");
-        userInput = int.Parse(Console.ReadLine());
+        string? userInputString = Console.ReadLine();
+        bool success = int.TryParse(userInputString, out int parsedInput);
 
-    if (userInput >= 1 && userInput <= 500)
+    if (parsedInput >= 1 && parsedInput <= 500)
     {
+        userInput = parsedInput;
         break;
     }
 
@@ -121,15 +122,15 @@ if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
 {
     int randomNumber = rnd.Next(1, 1001);
 
-    int userInput;
-
     while (true)
     {
         Console.Write("Choose a number between 1-1000: ");
-        userInput = int.Parse(Console.ReadLine());
+        string? userInputString = Console.ReadLine();
+        bool success = int.TryParse(userInputString, out int parsedInput);
 
-    if (userInput >= 1 && userInput <= 1000)
+    if (parsedInput >= 1 && parsedInput <= 1000)
     {
+        userInput = parsedInput;
         break;
     }
 
