@@ -35,10 +35,50 @@ string winner = @"
   |___/                                   
 ";
 
-Console.Write("Choose a difficulty (Easy, Medium or Hard): ");
+Console.Write("Choose a difficulty (Very easy|Easy|Medium|Hard|Very hard): ");
 string? userDifficulty = Console.ReadLine();
 
-if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
+if (string.Equals(userDifficulty, "very easy", StringComparison.OrdinalIgnoreCase))
+{
+    int randomNumber = rnd.Next(1, 26);
+
+    while (true)
+    {
+        Console.Write("Choose a number between 1-25: ");
+        string? userInputString = Console.ReadLine();
+        bool success = int.TryParse(userInputString, out int parsedInput);
+
+    if (parsedInput >= 1 && parsedInput <= 25)
+    {
+        userInput = parsedInput;
+        break;
+    }
+
+        Console.WriteLine("Invalid input, please choose a number between 1 and 25.");
+    }
+
+    int difference = randomNumber - userInput;
+    int positiveDifference = userInput - randomNumber;
+
+    if (userInput == randomNumber) 
+    {
+        Console.WriteLine(winner);
+    }
+    else if (userInput > randomNumber)
+    {   
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {positiveDifference}");
+    }   
+    else if (userInput < randomNumber)
+    {
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {difference}");
+    }
+    else 
+    {
+        Console.WriteLine("You're incorrect, try again!");
+    }
+} else if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
 {
     int randomNumber = rnd.Next(1, 101);
 
@@ -158,7 +198,47 @@ if (string.Equals(userDifficulty, "easy", StringComparison.OrdinalIgnoreCase))
     {
         Console.WriteLine("You're incorrect, try again!");
     }
+} else if (string.Equals(userDifficulty, "very hard", StringComparison.OrdinalIgnoreCase))
+{
+    int randomNumber = rnd.Next(1, 5001);
+
+    while (true)
+    {
+        Console.Write("Choose a number between 1-5000: ");
+        string? userInputString = Console.ReadLine();
+        bool success = int.TryParse(userInputString, out int parsedInput);
+
+    if (parsedInput >= 1 && parsedInput <= 5000)
+    {
+        userInput = parsedInput;
+        break;
+    }
+
+        Console.WriteLine("Invalid input, please choose a number between 1 and 5000.");
+    }
+
+    int difference = randomNumber - userInput;
+    int positiveDifference = userInput - randomNumber;
+
+    if (userInput == randomNumber) 
+    {
+        Console.WriteLine(winner);
+    }
+    else if (userInput > randomNumber)
+    {   
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {positiveDifference}");
+    }   
+    else if (userInput < randomNumber)
+    {
+        Console.WriteLine(gameOver);
+        Console.WriteLine($"You were off by: {difference}");
+    }
+    else 
+    {
+        Console.WriteLine("You're incorrect, try again!");
+    }
 } else 
 {
-    Console.WriteLine("Please choose either easy, medium or hard...");
+        Console.WriteLine("Please choose either easy, medium or hard...");
 }
